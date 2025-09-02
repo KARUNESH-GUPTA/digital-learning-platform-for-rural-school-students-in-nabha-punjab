@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WorldShift Loop - Digital Learning Platform</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#218085">
+</head>
+<body>
+    <!-- Language Selection Modal -->
+    <div id="languageModal" class="modal">
+        <div class="modal-content">
+            <h2>Select Your Language / ਭਾਸ਼ਾ ਚੁਣੋ / भाषा चुनें</h2>
+            <div class="language-options">
+                <button class="btn btn--primary language-btn" data-lang="english">
+                    <span class="language-text">English</span>
+                </button>
+                <button class="btn btn--primary language-btn" data-lang="punjabi">
+                    <span class="language-text">ਪੰਜਾਬੀ</span>
+                </button>
+                <button class="btn btn--primary language-btn" data-lang="hindi">
+                    <span class="language-text">हिंदी</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h1>🌍 WorldShift Loop</h1>
+                </div>
+                <div class="header-controls">
+                    <button class="btn btn--sm btn--outline" id="languageToggle">
+                        <span id="currentLanguage">English</span>
+                    </button>
+                    <button class="btn btn--sm btn--outline" id="voiceToggle">
+                        <span>🔊</span>
+                    </button>
+                    <button class="btn btn--sm btn--outline" id="offlineToggle">
+                        <span id="offlineStatus">📶 Online</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Landing Page -->
+        <section id="landingPage" class="page active">
+            <div class="container">
+                <div class="hero">
+                    <h1 class="hero-title" data-en="Empowering Rural Education in Punjab" 
+                        data-hi="पंजाब में ग्रामीण शिक्षा को सशक्त बनाना" 
+                        data-pa="ਪੰਜਾਬ ਵਿੱਚ ਪੇਂਡੂ ਸਿੱਖਿਆ ਨੂੰ ਸਸ਼ਕਤ ਬਣਾਉਣਾ">
+                        Empowering Rural Education in Punjab
+                    </h1>
+                    <p class="hero-subtitle" data-en="Quality education in your language, accessible anywhere, anytime"
+                       data-hi="आपकी भाषा में गुणवत्तापूर्ण शिक्षा, कहीं भी, कभी भी उपलब्ध"
+                       data-pa="ਤੁਹਾਡੀ ਭਾਸ਼ਾ ਵਿੱਚ ਗੁਣਵੱਤਾ ਸਫਿੱਖਿਆ, ਕਿਤੇ ਵੀ, ਕਦੇ ਵੀ ਉਪਲਬਧ">
+                        Quality education in your language, accessible anywhere, anytime
+                    </p>
+                    
+                    <div class="mission-vision">
+                        <div class="card">
+                            <div class="card__body">
+                                <h3 data-en="Our Mission" data-hi="हमारा मिशन" data-pa="ਸਾਡਾ ਮਿਸ਼ਨ">Our Mission</h3>
+                                <p data-en="To bridge the educational gap in rural Punjab by providing quality digital learning in local languages with low-bandwidth support."
+                                   data-hi="स्थानीय भाषाओं में कम बैंडविड्थ सहायता के साथ गुणवत्तापूर्ण डिजिटल शिक्षा प्रदान करके ग्रामीण पंजाब में शैक्षिक अंतर को पाटना।"
+                                   data-pa="ਘੱਟ ਬੈਂਡਵਿਡਥ ਸਹਾਇਤਾ ਨਾਲ ਸਥਾਨਕ ਭਾਸ਼ਾਵਾਂ ਵਿੱਚ ਗੁਣਵੱਤਾ ਡਿਜੀਟਲ ਸਿੱਖਿਆ ਪ੍ਰਦਾਨ ਕਰਕੇ ਪੇਂਡੂ ਪੰਜਾਬ ਵਿੱਚ ਸਿੱਖਿਆ ਦੇ ਫਾਸਲੇ ਨੂੰ ਪਾਟਣਾ।">
+                                    To bridge the educational gap in rural Punjab by providing quality digital learning in local languages with low-bandwidth support.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="card">
+                            <div class="card__body">
+                                <h3 data-en="Our Vision" data-hi="हमारा विजन" data-pa="ਸਾਡਾ ਵਿਜ਼ਨ">Our Vision</h3>
+                                <p data-en="Every child in rural Punjab has access to world-class education, fostering growth, innovation, and cultural pride."
+                                   data-hi="ग्रामीण पंजाब के हर बच्चे को विश्वस्तरीय शिक्षा तक पहुंच हो, जो विकास, नवाचार और सांस्कृतिक गर्व को बढ़ावा दे।"
+                                   data-pa="ਪੇਂਡੂ ਪੰਜਾਬ ਦੇ ਹਰ ਬੱਚੇ ਨੂੰ ਵਿਸ਼ਵ-ਪੱਧਰੀ ਸਿੱਖਿਆ ਤੱਕ ਪਹੁੰਚ ਹੋਵੇ, ਜੋ ਵਿਕਾਸ, ਨਵੀਨਤਾ ਅਤੇ ਸੱਭਿਆਚਾਰਕ ਮਾਣ ਨੂੰ ਬੜ਼ਾਵਾ ਦੇਵੇ।">
+                                    Every child in rural Punjab has access to world-class education, fostering growth, innovation, and cultural pride.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="role-selection">
+                        <h3 data-en="Choose Your Role" data-hi="अपनी भूमिका चुनें" data-pa="ਆਪਣੀ ਭੂਮਿਕਾ ਚੁਣੋ">Choose Your Role</h3>
+                        <div class="role-cards">
+                            <div class="role-card" data-role="student">
+                                <div class="role-icon">👨‍🎓</div>
+                                <h4 data-en="Student" data-hi="छात्र" data-pa="ਵਿਦਿਆਰਥੀ">Student</h4>
+                                <p data-en="Access courses and track progress" data-hi="कोर्स एक्सेस करें और प्रगति ट्रैक करें" data-pa="ਕੋਰਸ ਤੱਕ ਪਹੁੰਚ ਅਤੇ ਪ੍ਰਗਤੀ ਨੂੰ ਟਰੈਕ ਕਰੋ">Access courses and track progress</p>
+                            </div>
+                            <div class="role-card" data-role="teacher">
+                                <div class="role-icon">👩‍🏫</div>
+                                <h4 data-en="Teacher" data-hi="शिक्षक" data-pa="ਅਧਿਆਪਕ">Teacher</h4>
+                                <p data-en="Create content and manage students" data-hi="सामग्री बनाएं और छात्रों का प्रबंधन करें" data-pa="ਸਮਗਰੀ ਬਣਾਓ ਅਤੇ ਵਿਦਿਆਰਥੀਆਂ ਦਾ ਪ੍ਰਬੰਧਨ ਕਰੋ">Create content and manage students</p>
+                            </div>
+                            <div class="role-card" data-role="admin">
+                                <div class="role-icon">👨‍💼</div>
+                                <h4 data-en="Admin" data-hi="प्रशासक" data-pa="ਪ੍ਰਸ਼ਾਸਕ">Admin</h4>
+                                <p data-en="Manage system and analytics" data-hi="सिस्टम और एनालिटिक्स प्रबंधित करें" data-pa="ਸਿਸਟਮ ਅਤੇ ਵਿਸ਼ਲੇਸ਼ਣ ਦਾ ਪ੍ਰਬੰਧਨ ਕਰੋ">Manage system and analytics</p>
+                            </div>
+                            <div class="role-card" data-role="parent">
+                                <div class="role-icon">👨‍👩‍👧‍👦</div>
+                                <h4 data-en="Parent" data-hi="अभिभावक" data-pa="ਮਾਤਾ-ਪਿਤਾ">Parent</h4>
+                                <p data-en="Monitor child's progress" data-hi="बच्चे की प्रगति की निगरानी करें" data-pa="ਬੱਚੇ ਦੀ ਪ੍ਰਗਤੀ ਦਾ ਨਿਰੀਖਣ ਕਰੋ">Monitor child's progress</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Login Page -->
+        <section id="loginPage" class="page">
+            <div class="container">
+                <div class="login-container">
+                    <div class="card">
+                        <div class="card__body">
+                            <h2 id="loginTitle" data-en="Login" data-hi="लॉगिन" data-pa="ਲਾਗਇਨ">Login</h2>
+                            <form id="loginForm">
+                                <div class="form-group">
+                                    <label class="form-label" data-en="Username/Email" data-hi="उपयोगकर्ता नाम/ईमेल" data-pa="ਯੂਜ਼ਰਨੇਮ/ਈਮੇਲ">Username/Email</label>
+                                    <input type="text" class="form-control" id="username" required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" data-en="Password" data-hi="पासवर्ड" data-pa="ਪਾਸਵਰਡ">Password</label>
+                                    <input type="password" class="form-control" id="password" required>
+                                </div>
+                                <button type="submit" class="btn btn--primary btn--full-width" data-en="Login" data-hi="लॉगिन" data-pa="ਲਾਗਇਨ">Login</button>
+                                <button type="button" class="btn btn--outline btn--full-width mt-8" id="demoLogin" data-en="Demo Login" data-hi="डेमो लॉगिन" data-pa="ਡੈਮੋ ਲਾਗਇਨ">Demo Login</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Student Dashboard -->
+        <section id="studentDashboard" class="page">
+            <div class="container">
+                <div class="dashboard-header">
+                    <div class="user-info">
+                        <h2 data-en="Welcome, Student!" data-hi="स्वागत है, छात्र!" data-pa="ਜੀ ਆਇਆਂ ਨੂੰ, ਵਿਦਿਆਰਥੀ!">Welcome, Student!</h2>
+                        <div class="user-stats">
+                            <div class="stat-card">
+                                <span class="stat-number" id="studentPoints">450</span>
+                                <span class="stat-label" data-en="Points" data-hi="अंक" data-pa="ਅੰਕ">Points</span>
+                            </div>
+                            <div class="stat-card">
+                                <span class="stat-number" id="studentBadges">3</span>
+                                <span class="stat-label" data-en="Badges" data-hi="बैज" data-pa="ਬੈਜ">Badges</span>
+                            </div>
+                            <div class="stat-card">
+                                <span class="stat-number" id="studentStreak">7</span>
+                                <span class="stat-label" data-en="Day Streak" data-hi="दिन स्ट्रीक" data-pa="ਦਿਨ ਸਟ੍ਰੀਕ">Day Streak</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn btn--outline" id="logoutBtn" data-en="Logout" data-hi="लॉगआउट" data-pa="ਲਾਗਆਉਟ">Logout</button>
+                </div>
+
+                <div class="dashboard-tabs">
+                    <button class="tab-btn active" data-tab="courses" data-en="Courses" data-hi="कोर्स" data-pa="ਕੋਰਸ">Courses</button>
+                    <button class="tab-btn" data-tab="progress" data-en="Progress" data-hi="प्रगति" data-pa="ਪ੍ਰਗਤੀ">Progress</button>
+                    <button class="tab-btn" data-tab="leaderboard" data-en="Leaderboard" data-hi="लीडरबोर्ड" data-pa="ਲੀਡਰਬੋਰਡ">Leaderboard</button>
+                    <button class="tab-btn" data-tab="achievements" data-en="Achievements" data-hi="उपलब्धियां" data-pa="ਪ੍ਰਾਪਤੀਆਂ">Achievements</button>
+                </div>
+
+                <div class="tab-content">
+                    <!-- Courses Tab -->
+                    <div id="coursesTab" class="tab-pane active">
+                        <div class="motivational-quote">
+                            <p id="dailyQuote" data-en="Education is the key to success" data-hi="शिक्षा ही सफलता की चाबी है" data-pa="ਪੜ੍ਹਾਈ ਹੀ ਸਫਲਤਾ ਦੀ ਕੁੰਜੀ ਹੈ">Education is the key to success</p>
+                        </div>
+                        <div class="courses-grid" id="coursesGrid">
+                            <!-- Courses will be populated by JavaScript -->
+                        </div>
+                    </div>
+
+                    <!-- Progress Tab -->
+                    <div id="progressTab" class="tab-pane">
+                        <div class="progress-overview">
+                            <h3 data-en="Learning Progress" data-hi="सीखने की प्रगति" data-pa="ਸਿੱਖਣ ਦੀ ਪ੍ਰਗਤੀ">Learning Progress</h3>
+                            <div class="progress-cards" id="progressCards">
+                                <!-- Progress cards will be populated by JavaScript -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Leaderboard Tab -->
+                    <div id="leaderboardTab" class="tab-pane">
+                        <div class="leaderboard">
+                            <h3 data-en="Class Leaderboard" data-hi="क्लास लीडरबोर्ड" data-pa="ਕਲਾਸ ਲੀਡਰਬੋਰਡ">Class Leaderboard</h3>
+                            <div class="leaderboard-list" id="leaderboardList">
+                                <!-- Leaderboard will be populated by JavaScript -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Achievements Tab -->
+                    <div id="achievementsTab" class="tab-pane">
+                        <div class="achievements">
+                            <h3 data-en="Your Achievements" data-hi="आपकी उपलब्धियां" data-pa="ਤੁਹਾਡੀਆਂ ਪ੍ਰਾਪਤੀਆਂ">Your Achievements</h3>
+                            <div class="badges-grid" id="badgesGrid">
+                                <!-- Badges will be populated by JavaScript -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Course View -->
+        <section id="courseView" class="page">
+            <div class="container">
+                <div class="course-header">
+                    <button class="btn btn--outline" id="backToDashboard">← <span data-en="Back" data-hi="वापस" data-pa="ਵਾਪਸ">Back</span></button>
+                    <div class="course-info">
+                        <h2 id="courseTitle">Mathematics</h2>
+                        <p id="courseDescription">Learn Basic Mathematics</p>
+                    </div>
+                </div>
+
+                <div class="course-content">
+                    <div class="lessons-list">
+                        <h3 data-en="Lessons" data-hi="पाठ" data-pa="ਪਾਠ">Lessons</h3>
+                        <div id="lessonsList">
+                            <!-- Lessons will be populated by JavaScript -->
+                        </div>
+                    </div>
+
+                    <div class="lesson-viewer" id="lessonViewer">
+                        <div class="lesson-content">
+                            <h4 id="lessonTitle">Select a lesson to begin</h4>
+                            <div id="lessonBody">
+                                <p data-en="Choose a lesson from the left to start learning" data-hi="सीखना शुरू करने के लिए बाईं ओर से एक पाठ चुनें" data-pa="ਸਿੱਖਣਾ ਸ਼ੁਰੂ ਕਰਨ ਲਈ ਖੱਬੇ ਪਾਸੇ ਤੋਂ ਇੱਕ ਪਾਠ ਚੁਣੋ">Choose a lesson from the left to start learning</p>
+                            </div>
+                            <div class="lesson-controls">
+                                <button class="btn btn--primary" id="audioBtn">🔊 <span data-en="Audio" data-hi="ऑडियो" data-pa="ਆਡੀਓ">Audio</span></button>
+                                <button class="btn btn--outline" id="downloadBtn">📥 <span data-en="Download" data-hi="डाउनलोड" data-pa="ਡਾਊਨਲੋਡ">Download</span></button>
+                                <button class="btn btn--primary" id="quizBtn" data-en="Take Quiz" data-hi="क्विज लें" data-pa="ਕੁਇਜ਼ ਲਓ">Take Quiz</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Teacher Dashboard -->
+        <section id="teacherDashboard" class="page">
+            <div class="container">
+                <div class="dashboard-header">
+                    <div class="user-info">
+                        <h2 data-en="Teacher Dashboard" data-hi="शिक्षक डैशबोर्ड" data-pa="ਅਧਿਆਪਕ ਡੈਸ਼ਬੋਰਡ">Teacher Dashboard</h2>
+                        <div class="user-stats">
+                            <div class="stat-card">
+                                <span class="stat-number">35</span>
+                                <span class="stat-label" data-en="Students" data-hi="छात्र" data-pa="ਵਿਦਿਆਰਥੀ">Students</span>
+                            </div>
+                            <div class="stat-card">
+                                <span class="stat-number">3</span>
+                                <span class="stat-label" data-en="Courses" data-hi="कोर्स" data-pa="ਕੋਰਸ">Courses</span>
+                            </div>
+                            <div class="stat-card">
+                                <span class="stat-number">12</span>
+                                <span class="stat-label" data-en="Assignments" data-hi="असाइनमेंट" data-pa="ਅਸਾਇਨਮੈਂਟ">Assignments</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn btn--outline" id="teacherLogout" data-en="Logout" data-hi="लॉगआउट" data-pa="ਲਾਗਆਉਟ">Logout</button>
+                </div>
+
+                <div class="dashboard-tabs">
+                    <button class="tab-btn active" data-tab="teacher-courses" data-en="My Courses" data-hi="मेरे कोर्स" data-pa="ਮੇਰੇ ਕੋਰਸ">My Courses</button>
+                    <button class="tab-btn" data-tab="create-course" data-en="Create Course" data-hi="कोर्स बनाएं" data-pa="ਕੋਰਸ ਬਣਾਓ">Create Course</button>
+                    <button class="tab-btn" data-tab="students-management" data-en="Students" data-hi="छात्र" data-pa="ਵਿਦਿਆਰਥੀ">Students</button>
+                    <button class="tab-btn" data-tab="teacher-analytics" data-en="Analytics" data-hi="एनालिटिक्स" data-pa="ਵਿਸ਼ਲੇਸ਼ਣ">Analytics</button>
+                </div>
+
+                <div class="tab-content">
+                    <!-- Teacher Courses Tab -->
+                    <div id="teacherCoursesTab" class="tab-pane active">
+                        <div class="teacher-courses">
+                            <h3 data-en="Your Courses" data-hi="आपके कोर्स" data-pa="ਤੁਹਾਡੇ ਕੋਰਸ">Your Courses</h3>
+                            <div class="courses-grid" id="teacherCoursesGrid">
+                                <!-- Teacher courses will be populated by JavaScript -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Create Course Tab -->
+                    <div id="createCourseTab" class="tab-pane">
+                        <div class="create-course">
+                            <h3 data-en="Create New Course" data-hi="नया कोर्स बनाएं" data-pa="ਨਵਾਂ ਕੋਰਸ ਬਣਾਓ">Create New Course</h3>
+                            <form id="createCourseForm">
+                                <div class="form-group">
+                                    <label class="form-label" data-en="Course Title" data-hi="कोर्स शीर्षक" data-pa="ਕੋਰਸ ਸਿਰਲੇਖ">Course Title</label>
+                                    <input type="text" class="form-control" id="courseTitleInput" required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" data-en="Description" data-hi="विवरण" data-pa="ਵਰਣਨ">Description</label>
+                                    <textarea class="form-control" id="courseDescriptionInput" rows="3" required></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" data-en="Category" data-hi="श्रेणी" data-pa="ਸ਼੍ਰੇਣੀ">Category</label>
+                                    <select class="form-control" id="courseCategoryInput" required>
+                                        <option value="math" data-en="Mathematics" data-hi="गणित" data-pa="ਗਣਿਤ">Mathematics</option>
+                                        <option value="science" data-en="Science" data-hi="विज्ञान" data-pa="ਵਿਗਿਆਨ">Science</option>
+                                        <option value="language" data-en="Language" data-hi="भाषा" data-pa="ਭਾਸ਼ਾ">Language</option>
+                                    </select>
+                                </div>
+                                <button type="submit" class="btn btn--primary" data-en="Create Course" data-hi="कोर्स बनाएं" data-pa="ਕੋਰਸ ਬਣਾਓ">Create Course</button>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- Students Management Tab -->
+                    <div id="studentsManagementTab" class="tab-pane">
+                        <div class="students-management">
+                            <h3 data-en="Student Performance" data-hi="छात्र प्रदर्शन" data-pa="ਵਿਦਿਆਰਥੀ ਪ੍ਰਦਰਸ਼ਨ">Student Performance</h3>
+                            <div class="students-list" id="studentsList">
+                                <!-- Students will be populated by JavaScript -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Teacher Analytics Tab -->
+                    <div id="teacherAnalyticsTab" class="tab-pane">
+                        <div class="teacher-analytics">
+                            <h3 data-en="Course Analytics" data-hi="कोर्स एनालिटिक्स" data-pa="ਕੋਰਸ ਵਿਸ਼ਲੇਸ਼ਣ">Course Analytics</h3>
+                            <div class="analytics-cards">
+                                <div class="card">
+                                    <div class="card__body">
+                                        <h4 data-en="Completion Rate" data-hi="पूर्णता दर" data-pa="ਪੂਰਨਤਾ ਦਰ">Completion Rate</h4>
+                                        <div class="progress-bar">
+                                            <div class="progress-fill" style="width: 75%"></div>
+                                        </div>
+                                        <span>75%</span>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card__body">
+                                        <h4 data-en="Average Score" data-hi="औसत स्कोर" data-pa="ਔਸਤ ਸਕੋਰ">Average Score</h4>
+                                        <div class="score-display">82%</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Admin Dashboard -->
+        <section id="adminDashboard" class="page">
+            <div class="container">
+                <div class="dashboard-header">
+                    <div class="user-info">
+                        <h2 data-en="Admin Dashboard" data-hi="एडमिन डैशबोर्ड" data-pa="ਐਡਮਿਨ ਡੈਸ਼ਬੋਰਡ">Admin Dashboard</h2>
+                        <div class="user-stats">
+                            <div class="stat-card">
+                                <span class="stat-number">120</span>
+                                <span class="stat-label" data-en="Students" data-hi="छात्र" data-pa="ਵਿਦਿਆਰਥੀ">Students</span>
+                            </div>
+                            <div class="stat-card">
+                                <span class="stat-number">15</span>
+                                <span class="stat-label" data-en="Teachers" data-hi="शिक्षक" data-pa="ਅਧਿਆਪਕ">Teachers</span>
+                            </div>
+                            <div class="stat-card">
+                                <span class="stat-number">8</span>
+                                <span class="stat-label" data-en="Schools" data-hi="स्कूल" data-pa="ਸਕੂਲ">Schools</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn btn--outline" id="adminLogout" data-en="Logout" data-hi="लॉगआउट" data-pa="ਲਾਗਆਉਟ">Logout</button>
+                </div>
+
+                <div class="dashboard-tabs">
+                    <button class="tab-btn active" data-tab="admin-overview" data-en="Overview" data-hi="अवलोकन" data-pa="ਸੰਖੇਪ">Overview</button>
+                    <button class="tab-btn" data-tab="user-management" data-en="Users" data-hi="उपयोगकर्ता" data-pa="ਉਪਭੋਗਤਾ">Users</button>
+                    <button class="tab-btn" data-tab="school-analytics" data-en="Schools" data-hi="स्कूल" data-pa="ਸਕੂਲ">Schools</button>
+                    <button class="tab-btn" data-tab="system-settings" data-en="Settings" data-hi="सेटिंग्स" data-pa="ਸੈਟਿੰਗਜ਼">Settings</button>
+                </div>
+
+                <div class="tab-content">
+                    <!-- Admin Overview Tab -->
+                    <div id="adminOverviewTab" class="tab-pane active">
+                        <div class="admin-overview">
+                            <h3 data-en="System Overview" data-hi="सिस्टम अवलोकन" data-pa="ਸਿਸਟਮ ਸੰਖੇਪ">System Overview</h3>
+                            <div class="overview-cards">
+                                <div class="card">
+                                    <div class="card__body">
+                                        <h4 data-en="Active Users" data-hi="सक्रिय उपयोगकर्ता" data-pa="ਸਰਗਰਮ ਉਪਭੋਗਤਾ">Active Users</h4>
+                                        <div class="metric">98</div>
+                                        <div class="metric-change positive">+12% <span data-en="this week" data-hi="इस सप्ताह" data-pa="ਇਸ ਹਫ਼ਤੇ">this week</span></div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card__body">
+                                        <h4 data-en="Course Completions" data-hi="कोर्स पूर्णता" data-pa="ਕੋਰਸ ਸੰਪੂਰਨਤਾ">Course Completions</h4>
+                                        <div class="metric">246</div>
+                                        <div class="metric-change positive">+8% <span data-en="this month" data-hi="इस महीने" data-pa="ਇਸ ਮਹੀਨੇ">this month</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- User Management Tab -->
+                    <div id="userManagementTab" class="tab-pane">
+                        <div class="user-management">
+                            <h3 data-en="User Management" data-hi="उपयोगकर्ता प्रबंधन" data-pa="ਉਪਭੋਗਤਾ ਪ੍ਰਬੰਧਨ">User Management</h3>
+                            <div class="user-stats-grid">
+                                <div class="card">
+                                    <div class="card__body">
+                                        <h4 data-en="Total Students" data-hi="कुल छात्र" data-pa="ਕੁੱਲ ਵਿਦਿਆਰਥੀ">Total Students: 120</h4>
+                                        <p data-en="Active this week: 98" data-hi="इस सप्ताह सक्रिय: 98" data-pa="ਇਸ ਹਫ਼ਤੇ ਸਰਗਰਮ: 98">Active this week: 98</p>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card__body">
+                                        <h4 data-en="Total Teachers" data-hi="कुल शिक्षक" data-pa="ਕੁੱਲ ਅਧਿਆਪਕ">Total Teachers: 15</h4>
+                                        <p data-en="Content creators: 12" data-hi="सामग्री निर्माता: 12" data-pa="ਸਮਗਰੀ ਨਿਰਮਾਤਾ: 12">Content creators: 12</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- School Analytics Tab -->
+                    <div id="schoolAnalyticsTab" class="tab-pane">
+                        <div class="school-analytics">
+                            <h3 data-en="School Performance" data-hi="स्कूल प्रदर्शन" data-pa="ਸਕੂਲ ਪ੍ਰਦਰਸ਼ਨ">School Performance</h3>
+                            <div class="school-list">
+                                <div class="card">
+                                    <div class="card__body">
+                                        <h4>Govt. School Nabha</h4>
+                                        <p data-en="Students: 45 | Active: 38 | Completion Rate: 78%" data-hi="छात्र: 45 | सक्रिय: 38 | पूर्णता दर: 78%" data-pa="ਵਿਦਿਆਰਥੀ: 45 | ਸਰਗਰਮ: 38 | ਪੂਰਨਤਾ ਦਰ: 78%">Students: 45 | Active: 38 | Completion Rate: 78%</p>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card__body">
+                                        <h4>Govt. School Patiala</h4>
+                                        <p data-en="Students: 52 | Active: 44 | Completion Rate: 82%" data-hi="छात्र: 52 | सक्रिय: 44 | पूर्णता दर: 82%" data-pa="ਵਿਦਿਆਰਥੀ: 52 | ਸਰਗਰਮ: 44 | ਪੂਰਨਤਾ ਦਰ: 82%">Students: 52 | Active: 44 | Completion Rate: 82%</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- System Settings Tab -->
+                    <div id="systemSettingsTab" class="tab-pane">
+                        <div class="system-settings">
+                            <h3 data-en="System Settings" data-hi="सिस्टम सेटिंग्स" data-pa="ਸਿਸਟਮ ਸੈਟਿੰਗਜ਼">System Settings</h3>
+                            <div class="settings-cards">
+                                <div class="card">
+                                    <div class="card__body">
+                                        <h4 data-en="Language Settings" data-hi="भाषा सेटिंग्स" data-pa="ਭਾਸ਼ਾ ਸੈਟਿੰਗਜ਼">Language Settings</h4>
+                                        <p data-en="Manage multilingual support" data-hi="बहुभाषी समर्थन प्रबंधित करें" data-pa="ਬਹੁਭਾਸ਼ੀ ਸਹਾਇਤਾ ਦਾ ਪ੍ਰਬੰਧਨ ਕਰੋ">Manage multilingual support</p>
+                                        <button class="btn btn--outline mt-8" data-en="Configure" data-hi="कॉन्फ़िगर करें" data-pa="ਸੰਰਚਨਾ ਕਰੋ">Configure</button>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card__body">
+                                        <h4 data-en="Offline Content" data-hi="ऑफ़लाइन सामग्री" data-pa="ਆਫਲਾਈਨ ਸਮਗਰੀ">Offline Content</h4>
+                                        <p data-en="Manage downloadable resources" data-hi="डाउनलोड योग्य संसाधन प्रबंधित करें" data-pa="ਡਾਊਨਲੋਡ ਯੋਗ ਸਰੋਤਾਂ ਦਾ ਪ੍ਰਬੰਧਨ ਕਰੋ">Manage downloadable resources</p>
+                                        <button class="btn btn--outline mt-8" data-en="Manage" data-hi="प्रबंधित करें" data-pa="ਪ੍ਰਬੰਧਨ ਕਰੋ">Manage</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Parent Dashboard -->
+        <section id="parentDashboard" class="page">
+            <div class="container">
+                <div class="dashboard-header">
+                    <div class="user-info">
+                        <h2 data-en="Parent Dashboard" data-hi="अभिभावक डैशबोर्ड" data-pa="ਮਾਤਾ-ਪਿਤਾ ਡੈਸ਼ਬੋਰਡ">Parent Dashboard</h2>
+                        <div class="user-stats">
+                            <div class="stat-card">
+                                <span class="stat-number">1</span>
+                                <span class="stat-label" data-en="Child" data-hi="बच्चा" data-pa="ਬੱਚਾ">Child</span>
+                            </div>
+                            <div class="stat-card">
+                                <span class="stat-number">3</span>
+                                <span class="stat-label" data-en="Courses" data-hi="कोर्स" data-pa="ਕੋਰਸ">Courses</span>
+                            </div>
+                            <div class="stat-card">
+                                <span class="stat-number">78%</span>
+                                <span class="stat-label" data-en="Avg Progress" data-hi="औसत प्रगति" data-pa="ਔਸਤ ਪ੍ਰਗਤੀ">Avg Progress</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn btn--outline" id="parentLogout" data-en="Logout" data-hi="लॉगआउट" data-pa="ਲਾਗਆਉਟ">Logout</button>
+                </div>
+
+                <div class="dashboard-tabs">
+                    <button class="tab-btn active" data-tab="child-progress" data-en="Progress" data-hi="प्रगति" data-pa="ਪ੍ਰਗਤੀ">Progress</button>
+                    <button class="tab-btn" data-tab="communication" data-en="Messages" data-hi="संदेश" data-pa="ਸੰਦੇਸ਼">Messages</button>
+                    <button class="tab-btn" data-tab="notifications" data-en="Notifications" data-hi="सूचनाएं" data-pa="ਸੂਚਨਾਵਾਂ">Notifications</button>
+                </div>
+
+                <div class="tab-content">
+                    <!-- Child Progress Tab -->
+                    <div id="childProgressTab" class="tab-pane active">
+                        <div class="child-progress">
+                            <h3 data-en="Simran's Progress" data-hi="सिमरन की प्रगति" data-pa="ਸਿਮਰਨ ਦੀ ਪ੍ਰਗਤੀ">Simran's Progress</h3>
+                            <div class="progress-overview">
+                                <div class="progress-cards">
+                                    <div class="card">
+                                        <div class="card__body">
+                                            <h4 data-en="Mathematics" data-hi="गणित" data-pa="ਗਣਿਤ">Mathematics</h4>
+                                            <div class="progress-bar">
+                                                <div class="progress-fill" style="width: 75%"></div>
+                                            </div>
+                                            <span>75%</span>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="card__body">
+                                            <h4 data-en="Science" data-hi="विज्ञान" data-pa="ਵਿਗਿਆਨ">Science</h4>
+                                            <div class="progress-bar">
+                                                <div class="progress-fill" style="width: 60%"></div>
+                                            </div>
+                                            <span>60%</span>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="card__body">
+                                            <h4 data-en="English" data-hi="अंग्रेजी" data-pa="ਅੰਗਰੇਜ਼ੀ">English</h4>
+                                            <div class="progress-bar">
+                                                <div class="progress-fill" style="width: 80%"></div>
+                                            </div>
+                                            <span>80%</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Communication Tab -->
+                    <div id="communicationTab" class="tab-pane">
+                        <div class="communication">
+                            <h3 data-en="Messages from Teachers" data-hi="शिक्षकों के संदेश" data-pa="ਅਧਿਆਪਕਾਂ ਤੋਂ ਸੰਦੇਸ਼">Messages from Teachers</h3>
+                            <div class="messages-list">
+                                <div class="card">
+                                    <div class="card__body">
+                                        <h4 data-en="Math Teacher - Gurpreet Singh" data-hi="गणित शिक्षक - गुरप्रीत सिंह" data-pa="ਗਣਿਤ ਅਧਿਆਪਕ - ਗੁਰਪ੍ਰੀਤ ਸਿੰਘ">Math Teacher - Gurpreet Singh</h4>
+                                        <p data-en="Simran is doing well in mathematics. Please encourage daily practice." data-hi="सिमरन गणित में अच्छा कर रहा है। कृपया दैनिक अभ्यास को बढ़ावा दें।" data-pa="ਸਿਮਰਨ ਗਣਿਤ ਵਿੱਚ ਚੰਗੀ ਤਰ੍ਹਾਂ ਕਰ ਰਹੀ ਹੈ। ਕਿਰਪਾ ਕਰਕੇ ਰੋਜ਼ਾਨਾ ਅਭਿਆਸ ਨੂੰ ਉਤਸ਼ਾਹਿਤ ਕਰੋ।">Simran is doing well in mathematics. Please encourage daily practice.</p>
+                                        <small>2 days ago</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Notifications Tab -->
+                    <div id="notificationsTab" class="tab-pane">
+                        <div class="notifications">
+                            <h3 data-en="Recent Notifications" data-hi="हाल की सूचनाएं" data-pa="ਹਾਲ ਦੀਆਂ ਸੂਚਨਾਵਾਂ">Recent Notifications</h3>
+                            <div class="notifications-list" id="notificationsList">
+                                <!-- Notifications will be populated by JavaScript -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p data-en="© 2025 WorldShift Loop. Empowering rural education in Punjab." data-hi="© 2025 WorldShift Loop. पंजाब में ग्रामीण शिक्षा को सशक्त बनाना।" data-pa="© 2025 WorldShift Loop. ਪੰਜਾਬ ਵਿੱਚ ਪੇਂਡੂ ਸਿੱਖਿਆ ਨੂੰ ਸਸ਼ਕਤ ਬਣਾਉਣਾ।">© 2025 WorldShift Loop. Empowering rural education in Punjab.</p>
+                <div class="footer-links">
+                    <button class="btn btn--sm btn--outline" id="helpBtn" data-en="Help" data-hi="सहायता" data-pa="ਸਹਾਇਤਾ">Help</button>
+                    <button class="btn btn--sm btn--outline" id="contactBtn" data-en="Contact" data-hi="संपर्क" data-pa="ਸੰਪਰਕ">Contact</button>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
